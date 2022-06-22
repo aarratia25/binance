@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Dashmix - Bootstrap 5 Admin Template &amp; UI Framework</title>
+    <title>Dashmix</title>
 
-    <meta name="description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="description" content="Dashmix created by pixelcave and published on Themeforest">
     <meta name="author" content="pixelcave">
     <meta name="robots" content="noindex, nofollow">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework">
+    <meta property="og:title" content="Dashmix">
     <meta property="og:site_name" content="Dashmix">
-    <meta property="og:description" content="Dashmix - Bootstrap 5 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta property="og:description" content="Dashmix created by pixelcave and published on Themeforest">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
@@ -39,12 +39,6 @@
     </div>
     <!-- END Page Container -->
 
-    <!--
-      Dashmix JS
-
-      Core libraries and functionality
-      webpack is putting everything together at assets/_js/main/app.js
-    -->
     <script src="/assets/js/dashmix.app.min.js"></script>
 
     <!-- jQuery (required for jQuery Validation plugin) -->
