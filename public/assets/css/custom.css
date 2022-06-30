@@ -7,3 +7,9 @@
 .cursor-pointer	{
     cursor: pointer !important;
 }
+
+.active-plan {
+    background: #6f9c40;
+    color: white;
+    font-weight: bold;
+}

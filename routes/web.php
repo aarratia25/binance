@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +20,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/register', [RegisterController::class, 'create'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/plan/{id}', [HomeController::class, 'plan'])->name('plan');
+    Route::post('/plan/{id}', [HomeController::class, 'store']);
+    Route::get('/transactions', [HomeController::class, 'transactions'])->name('transactions');
+    Route::get('/complete', [HomeController::class, 'complete'])->name('complete');
+    Route::post('/complete', [HomeController::class, 'completeProfile']);
+});
+

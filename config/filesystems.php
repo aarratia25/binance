@@ -44,6 +44,18 @@ return [
             'throw' => false,
         ],
 
+        'screenshots' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/screenshots'),
+            'throw' => false,
+        ],
+
+        'qrs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/qrs'),
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

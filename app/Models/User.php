@@ -18,9 +18,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'referred_id',
         'name',
+        'lastname',
         'email',
         'password',
+        'wallet',
+        'network',
+        'complete',
     ];
 
     /**
@@ -41,4 +46,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function referred()
+    {
+        return $this->belongsTo(User::class, 'referred_id');
+    }
+
+    public function transaction()
+    {
+        return $this->belongsTo(Transaction::class);
+    }
 }

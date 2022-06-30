@@ -9,10 +9,10 @@
         <div class="p-3 w-100">
           <!-- Header -->
           <div class="mb-3 text-center">
-            <a class="link-fx fw-bold fs-1" href="index.html">
-              <span class="text-dark">Dash</span><span class="text-primary">mix</span>
+            <a class="link-fx fw-bold fs-1" href="/">
+              <span class="text-dark">{{config('app.name')}}</span>
             </a>
-            <p class="text-uppercase fw-bold fs-sm text-muted">Sign In</p>
+            <p class="text-uppercase fw-bold fs-sm text-muted">Inicia sesión</p>
           </div>
           <!-- END Header -->
 
@@ -23,7 +23,7 @@
                 @csrf
                 <div class="py-3">
                   <div class="mb-4">
-                    <input type="email" placeholder="Email" class="form-control form-control-lg form-control-alt @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                    <input type="email" placeholder="Correo" class="form-control form-control-lg form-control-alt @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus>
                     @error('email')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
                     @enderror
                 </div>
                   <div class="mb-4">
-                    <input type="password" placeholder="Password" class="form-control form-control-lg form-control-alt @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
+                    <input type="password" placeholder="Contraseña" class="form-control form-control-lg form-control-alt @error('password') is-invalid @enderror" name="password" autocomplete="current-password">
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -40,15 +40,18 @@
                 </div>
                 </div>
                 <div class="mb-4">
-                  <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
-                    <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Login
-                  </button>
-                  <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
-                    <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="{{ route('password.request') }}">
-                      <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Forgot Password
-                    </a>
-                  </p>
-                </div>
+                    <button type="submit" class="btn w-100 btn-lg btn-hero btn-primary">
+                      <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Entrar
+                    </button>
+                    <p class="mt-3 mb-0 d-lg-flex justify-content-lg-between">
+                      <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="#">
+                        <i class="fa fa-exclamation-triangle opacity-50 me-1"></i> Olvidó de contraseña
+                      </a>
+                      <a class="btn btn-sm btn-alt-secondary d-block d-lg-inline-block mb-1" href="{{ route('register') }}">
+                        <i class="fa fa-plus opacity-50 me-1"></i> Registro
+                      </a>
+                    </p>
+                  </div>
               </form>
             </div>
           </div>
@@ -61,7 +64,7 @@
       <div class="hero-static col-md-6 d-none d-md-flex align-items-md-center justify-content-md-center text-md-center">
         <div class="p-3">
           <p class="display-4 fw-bold text-white mb-3">
-            Welcome to the future
+            Dashboard
           </p>
           <p class="fs-lg fw-semibold text-white-75 mb-0">
             Copyright &copy; <span data-toggle="year-copy"></span>

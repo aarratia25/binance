@@ -7,7 +7,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/web/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/web/assets/img/favicon.png">
   <title>
-    MinerGate Lite
+    {{ config('app.name') }}
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -50,23 +50,18 @@
         </div>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Facebook">
               <i class="fa fa-facebook-square"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Instagram">
               <i class="fa fa-instagram"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Twitter">
               <i class="fa fa-twitter-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#" target="_blank" data-toggle="tooltip" title="Star us on Github">
-              <i class="fa fa-github"></i>
             </a>
           </li>
         </ul>
@@ -127,7 +122,9 @@
               <div class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle">
                 <i class="ni ni-settings-gear-65"></i>
               </div>
-              <h6 class="info-title text-uppercase text-primary">Social Conversations</h6>
+              <a href="{{ route('plan', 1) }}">
+                <h6 class="info-title text-uppercase text-primary">Social Conversations</h6>
+              </a>
               <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
             </div>
           </div>
@@ -136,7 +133,9 @@
               <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle">
                 <i class="ni ni-atom"></i>
               </div>
-              <h6 class="info-title text-uppercase text-success">Analyze Performance</h6>
+              <a href="{{ route('plan', 2) }}">
+                <h6 class="info-title text-uppercase text-success">Analyze Performance</h6>
+              </a>
               <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
             </div>
           </div>
@@ -145,7 +144,9 @@
               <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle">
                 <i class="ni ni-world"></i>
               </div>
-              <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
+              <a href="{{ route('plan', 3) }}">
+                <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
+              </a>
               <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
             </div>
           </div>
@@ -154,7 +155,9 @@
               <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle">
                 <i class="ni ni-like-2"></i>
               </div>
-              <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
+              <a href="{{ route('plan', 4) }}">
+                <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
+              </a>
               <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
             </div>
           </div>
@@ -167,7 +170,7 @@
         <div class="row align-items-center justify-content-md-between">
           <div class="col-md-6">
             <div class="copyright">
-              &copy; 2020 MinerGate Lite.
+              &copy; {{ date('Y') }} MinerGate Lite.
             </div>
           </div>
         </div>
