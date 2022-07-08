@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price');
             $table->integer('price_max');
-            $table->text('description')->nullable();
+            $table->integer('time');
             $table->timestamps();
         });
     }

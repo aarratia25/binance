@@ -15,8 +15,8 @@ class PlanSeeder extends Seeder
      */
     public function run()
     {
-        Plan::create(['name' => 'Plan #1', 'price' => 20, 'price_max' => 99]);
-        Plan::create(['name' => 'Plan #2', 'price' => 100, 'price_max' => 499]);
-        Plan::create(['name' => 'Plan #3', 'price' => 500, 'price_max' => 999]);
+        Plan::create(['name' => 'Plan #1', 'price' => 20, 'price_max' => 99, 'time' => 120]);
+        Plan::create(['name' => 'Plan #2', 'price' => 100, 'price_max' => 499, 'time' => 60]);
+        Plan::create(['name' => 'Plan #3', 'price' => 500, 'price_max' => 999, 'time' => 20]);
     }
 }

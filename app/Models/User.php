@@ -18,14 +18,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'referred_id',
-        'name',
-        'lastname',
-        'email',
-        'password',
-        'wallet',
-        'network',
-        'complete',
+       'referred_id',
+       'plan_id',
+       'name',
+       'lastname',
+       'email',
+       'password',
+       'wallet',
+       'network',
+       'complete',
     ];
 
     /**
@@ -47,6 +48,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class, 'plan_id');
+    }
+
     public function referred()
     {
         return $this->belongsTo(User::class, 'referred_id');
@@ -54,6 +60,6 @@ class User extends Authenticatable
 
     public function transaction()
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->hasOne(Transaction::class);
     }
 }

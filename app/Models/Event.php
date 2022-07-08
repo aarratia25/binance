@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plan extends Model
+class Event extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,7 @@ class Plan extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'price',
-        'price_max',
-        'time',
+        'action',
+        'user_id',
     ];
 }

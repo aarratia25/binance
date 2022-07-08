@@ -19,6 +19,9 @@
                     <p>Red: Tron (TRC20)</p>
                     <p>Dirección: TUjEQd5tVvDFFrJrEaN3V9Javb9k8vzALp</p>
                     <img src="/web/assets/img/qr.jpg" class="img-fluid mx-auto d-block" style="width: 50%;">
+                    <div class="text-center">
+                        <a class="btn btn-primary mb-4" href="https://www.binance.com" target="_blank">Pagar en Binance</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -37,6 +40,15 @@
                             <small>Permitidos: jpeg,bmp,png,gif,svg,pdf</small>
                             <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
                             @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-4 form-group">
+                            <label>Monto</label>
+                            <input type="number" name="amount" class="form-control @error('amount') is-invalid @enderror">
+                            @error('amount')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

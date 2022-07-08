@@ -26,6 +26,18 @@
                         <span class="nav-main-link-name">Transacciones</span>
                     </a>
                 </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link" href="{{ route('profile') }}">
+                        <i class="nav-main-link-icon fa fa-user"></i>
+                        <span class="nav-main-link-name">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-main-item">
+                    <a class="nav-main-link" href="{{ route('events') }}">
+                        <i class="nav-main-link-icon fa fa-users"></i>
+                        <span class="nav-main-link-name">Eventos</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

@@ -87,16 +87,39 @@
         <div class="container shape-container d-flex align-items-center py-lg">
           <div class="col px-0">
             <div class="row align-items-center justify-content-center">
-              <div class="col-lg-6 text-center">
-                <h1 class="text-white display-1">People stories</h1>
-                <h2 class="display-4 font-weight-normal text-white">The time is right now!</h2>
-                <div class="btn-wrapper mt-4">
-                  <a href="#" class="btn btn-warning btn-icon mt-3 mb-sm-0">
-                    <span class="btn-inner--icon"><i class="ni ni-button-play"></i></span>
-                    <span class="btn-inner--text">Play more</span>
-                  </a>
+              @auth
+              <div class="col-lg-10 text-center">
+                    <h1 class="text-white display-1">
+                        Click Disponibles ({{ (5 - $events->count()) }})
+                    </h1>
+                    @if ($events->count() > 0)
+                    <h2 class="display-4 font-weight-normal text-white">
+                        Proximo click {{ Carbon\Carbon::parse($events->first()->click)->diffForHumans()  }}
+                    </h2>
+                    <div class="btn-wrapper mt-4">
+                        <img src="/web/assets/img/datlas_bitcoin_header2.gif" class="img-fluid">
+                    </div>
+                    @endif
+                    @if (Carbon\Carbon::now()->gte($events->first()->click))
+                        <div class="mt-4">
+                            <a href="{{ route('click') }}" class="btn btn-default">
+                                Click Aqui
+                            </a>
+                        </div>
+                    @endif
                 </div>
-              </div>
+              @else
+              <div class="col-lg-10 text-center">
+                    <h1 class="text-white display-1">
+                        {{ config('app.name') }}
+                    </h1>
+                    <a href="{{ route('login') }}">
+                        <h2 class="display-4 font-weight-normal text-white">
+                            Login
+                        </h2>
+                    </a>
+                </div>
+              @endauth
             </div>
           </div>
         </div>
@@ -117,50 +140,23 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-lg icon-shape icon-shape-primary shadow rounded-circle">
-                <i class="ni ni-settings-gear-65"></i>
-              </div>
-              <a href="{{ route('plan', 1) }}">
-                <h6 class="info-title text-uppercase text-primary">Social Conversations</h6>
-              </a>
-              <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info">
+          @foreach ($plans as $item)
+          <div class="col-md-4">
+            <div class="info text-center">
               <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle">
                 <i class="ni ni-atom"></i>
               </div>
-              <a href="{{ route('plan', 2) }}">
-                <h6 class="info-title text-uppercase text-success">Analyze Performance</h6>
+              <a href="{{ route('plan', $item->id) }}">
+                <h6 class="info-title text-uppercase text-success">
+                    {{ $item->name }}
+                </h6>
               </a>
-              <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
+              <p class="description opacity-8">
+                Precio desde {{ $item->price }} Hasta {{ $item->price_max }}
+              </p>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle">
-                <i class="ni ni-world"></i>
-              </div>
-              <a href="{{ route('plan', 3) }}">
-                <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
-              </a>
-              <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="info">
-              <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle">
-                <i class="ni ni-like-2"></i>
-              </div>
-              <a href="{{ route('plan', 4) }}">
-                <h6 class="info-title text-uppercase text-warning">Measure Conversions</h6>
-              </a>
-              <p class="description opacity-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quod obcaecati harum</p>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
